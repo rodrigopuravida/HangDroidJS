@@ -1,0 +1,17 @@
+body{
+  /*background:blue;*/
+}
+
+.task{
+  font-weight: bold;
+}
+.task.completed{
+  text-decoration: line-through;
+  color: red;
+}
+
+
+.my-class{
+  color: purple;
+  background: yellow;
+}

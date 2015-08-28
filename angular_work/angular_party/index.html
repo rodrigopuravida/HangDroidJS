@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Angular PARTY!!</title>
+
+  <link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap-tpls.min.js"></script>
+  <script src="js/taco-module.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/filters.js"></script>
+
+</head>
+<body ng-app="PartyApp">
+  <div class="container">
+    <h1>Angular PARTY!!</h1>
+    <div class="row">
+
+    <div class="col-xs-4" ng-controller="Todo">
+      <h3>{{title}}</h3>
+      <div class="alert alert-danger" ng-show="errorMsg">
+        {{errorMsg}}
+      </div>
+      <form role="form" ng-submit="addTask()">
+        <div class="form-group">
+          <label for="">Task Name</label>
+          <input ng-model="taskText" type="text" class="form-control" id="" placeholder="Input field">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Task</button>
+      </form>
+      <hr>
+      <ul>
+        <li ng-repeat="task in tasks" ng-class="{'completed':task.completed}" class="task">
+          <input type="checkbox" ng-model="task.completed">
+          {{task.name}}
+          <a href="#" ng-click="removeTask($index)">x</a>
+        </li>
+      </ul>
+      <h1>My Homework custom directives</h1>
+      <like-button></like-button>
+      <like-button></like-button>
+
+      <h1>WEATHER</h1>
+      <weather></weather>
+
+
+
+
+
+    </div>
+
+      <div class="col-xs-4" ng-controller="Something">
+        <h3 ng-class="name">Title Here</h3>
+        Hello {{name | properCase}} you are happy: {{happy}}!<br>
+        <label ng-class="{'my-class':happy}">Enter your name:</label>
+        <input type="text" ng-model="name">
+        <button ng-click="happy = !happy">Toggle Happy</button><br>
+        <button ng-click="addClick()">Click Count: {{clicks | ordinal}}</button><br>
+        <button class="btn" ng-class="{'btn-primary':primary,'btn-xs':small}" ng-click="toggleBtn()">DO IT!!</button>
+
+        <div ng-if="happy">Yup... happy.</div>
+        <div id="my-id" ng-show="happy">I am Happy.</div>
+        <div ng-hide="happy">I am NOT happy.</div>
+        <image-toggle on="images/happy_face.jpg" off="images/sad_face.jpg" state="happy"></image-toggle>
+        <image-toggle state="false" on="images/happy_face.jpg" off="images/sad_face.jpg"></image-toggle>
+        <span image-toggle state="false" on="images/happy_face.jpg" off="images/sad_face.jpg"></span>
+        <hr>
+        <input type="text" ng-model="inputColor" ng-style="{'background-color':inputColor}">
+        <taco>Hello???</taco>
+        <taco>Goodbye???</taco>
+
+      </div>
+
+      <div class="col-sm-4" ng-controller="authCtrl">
+        <tabset>
+          <tab heading="Login">
+            <form ng-submit="login()">
+              <div class="form-group">
+                <label for="">email</label>
+                <input ng-model="user.email" type="text" class="form-control" id="" placeholder="Input field">
+              </div>
+              <div class="form-group">
+                <label for="">password</label>
+                <input ng-model="user.password" type="password" class="form-control" id="" placeholder="Input field">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </tab>
+          <tab heading="Signup">
+            <form ng-submit="signup()">
+              <div class="form-group">
+                <label for="">email</label>
+                <input ng-model="user.email" type="text" class="form-control" id="" placeholder="Input field">
+              </div>
+              <div class="form-group">
+                <label for="">password</label>
+                <input ng-model="user.password" type="password" class="form-control" id="" placeholder="Input field">
+              </div>
+              <div class="form-group">
+                <label for="">password</label>
+                <input ng-model="user.password2" type="password" class="form-control" id="" placeholder="Input field">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </tab>
+        </tabset>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
