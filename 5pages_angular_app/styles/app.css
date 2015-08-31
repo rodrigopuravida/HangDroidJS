@@ -1,0 +1,15 @@
+#homeTitle {
+
+    color: red;
+}
+
+#home-body {
+
+  background-image: url("img_tree.gif"), url("img_flwr.gif");
+  background-color: #cccccc;
+
+}
+
+#about {
+  color: red;
+}
