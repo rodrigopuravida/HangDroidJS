@@ -25,14 +25,6 @@ portfolioApp.config(['$routeProvider','$locationProvider',function($routeProvide
     templateUrl:'views/whereigo.html',
     controller:'WhereIGoCtrl'
   })
-  .when('/search',{
-    templateUrl:'views/search.html',
-    controller:'SearchCtrl'
-  })
-  .when('/movie/:imdbid',{
-    templateUrl:'views/movie.html',
-    controller:'MovieCtrl'
-  })
   .otherwise({
     templateUrl: 'views/404.html'
   });
