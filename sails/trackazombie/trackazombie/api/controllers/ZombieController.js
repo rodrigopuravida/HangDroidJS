@@ -39,8 +39,10 @@
   //GET /zombie/:id -- displays details about a zombie
   show: function(req,res){
     Zombie.findOne(req.params.id).then(function(zombie){
-      res.view('zombie/show',{zombie:zombie});
-    });
+      Comment.find({where: {zombie: zombie.id}}).then(function(comment){
+      res.view('zombie/show',{zombie:zombie, myComment:comment});
+    })
+  })
   }
 
 };

@@ -36,7 +36,8 @@ module.exports.routes = {
   'get /zombie' : 'ZombieController.index',
   'get /zombie/:id' : 'ZombieController.show',
   'post /zombie' : 'ZombieController.create',
-  'get /zombie/new' : 'ZombieController.new'
+  'get /zombie/new' : 'ZombieController.new',
+  'post /zombie/:id' : 'CommentController.create'
 
 
   // '/': {
