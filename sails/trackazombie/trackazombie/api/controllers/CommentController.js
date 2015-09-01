@@ -14,7 +14,9 @@ module.exports = {
           zombie: zombie.id
         }).then(function(comment){
           // res.send(comment)
-          res.redirect('/zombie/'+comment.zombie);
+          console.log(comment.zombie);
+          // res.send(comment.zombie);
+          res.redirect('/zombie/'+ comment.zombie);
         })
       }).catch(function(err){
         res.send(err)
