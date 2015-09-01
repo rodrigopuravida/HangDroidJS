@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zombie Watch</title>
+</head>
+<body>
+
+
+
+<div class="container">
+<h1>Zombie Watch</h1>
+<div class="row">
+  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Zombie Id</th>
+        <th>Zombie Gender</th>
+        <th>Zombie Speed</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% zombies.forEach(function(zombie) { %>
+      <tr>
+      <td><%= zombie.id %></td>
+        <td><a href="/zombie/<%= zombie.id %>"><%= zombie.gender %></a></td>
+        <td><%= zombie.speed %></td>
+
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+
+  </div>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <form method="post" action="/zombie">
+    gender: <input type="text" name="gender"><br>
+    speed: <input type="text" name="speed">
+    <input type="submit" value="Zombie Creation">
+    </form>
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+
