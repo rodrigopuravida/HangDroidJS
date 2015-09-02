@@ -32,9 +32,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+  // '/': {
+  //   view: 'homepage'
+  // }
+
+  'post /person/:id/addCategory' : 'PersonController.addCategorybyName'
 
   /***************************************************************************
   *                                                                          *
