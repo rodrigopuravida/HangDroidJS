@@ -6,10 +6,10 @@ AddressBookApp.controller('HomeCtrl', ['$scope', 'Person', '$modal',function($sc
 
   console.log('Work home controller');
 
-  // Post.query().then(function(posts) {
-  //   console.log(posts);
-  //   $scope.posts = posts;
-  // });
+  Person.query().then(function(people) {
+    console.log(people);
+    $scope.people = people;
+  });
 
   // $scope.deletePost = function(post) {
   //   post.$delete();
