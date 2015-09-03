@@ -9,36 +9,36 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th>First Name</th>
+          <th><h2>First Name</h2></th>
 
 
-          <th>Last Name</th>
+          <th><h2>Last Name</h2></th>
 
 
-          <th>Notes</th>
+          <th><h2>Notes</h2></th>
           </tr>
 
       </thead>
       <tbody>
         <tr>
-          <td>{{person.firstName}}</td>
+          <td><h2>{{person.firstName}}</h2></td>
 
 
-          <td>{{person.lastName}}</td>
+          <td><h2>{{person.lastName}}</h2></td>
 
 
-          <td>{{person.notes}}</td>
+          <td><h2>{{person.notes}}</h2></td>
         </tr>
       </tbody>
     </table>
 
 
-    <h3>Contacts </h3>
-      <ul>
-        <li ng-repeat="contact in person.contacts"><a href="contact/{{contact.id}}">{{person.contacts}}</a>
+    <h2>Contacts </h2>
+      <ul><h3>
+        <li ng-repeat="contact in person.contacts"><a href="contact/{{contact.id}}">{{contact.name}}</a></li></h3>
       </ul>
-      <h3>Categories</h3>
-      <ul>
-        <li ng-repeat="category in person.categories"><a href="category/{{category.id}}">{{person.categories}}</a>
+      <h2>Categories</h2>
+      <ul><h3>
+        <li ng-repeat="category in person.categories"><a href="category/{{pcategory.id}}">{{category.name}}</a></li></h3>
       </ul>
 
