@@ -36,7 +36,7 @@ module.exports.routes = {
   //   view: 'homepage'
   // }
 
-  'post /person/:id/addCategory' : 'PersonController.addCategorybyName'
+  'post /person/:id/addCategory' : 'PersonController.addCategorybyName',
 
   /***************************************************************************
   *                                                                          *
@@ -47,5 +47,13 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+  '/': 'PagesController.index',
+
+  "get *":{
+    controller:"PagesController",
+    action:"index",
+    skipAssets: true,
+    skipRegex: /^\/api\/.*$/
+  }
 
 };
