@@ -7,9 +7,11 @@ AddressBookApp.controller('PersonShowCtrl', ['$scope', 'Person', '$routeParams',
     Person.get({id: $routeParams.id}).then(function(person) {
       $scope.person = person;
       $scope.contacts = $scope.person.contacts;
+      $scope.categories = $scope.person.categories;
     });
 
     console.log('person with contacts' + $scope.contacts);
+    console.log('person with categories ' + $scope.categories);
 
 
 }]);

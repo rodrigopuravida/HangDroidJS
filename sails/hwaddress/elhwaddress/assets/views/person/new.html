@@ -4,7 +4,7 @@
     <label>First Name</label>
     <input required ng-minlength="1" ng-maxlength="20" name="firstName" ng-model="newPerson.firstName" type="text" class="form-control">
 
-    <div ng-if="newPersonForm.firstName.$touched" ng-messages="newPersonsForm.firstName.$error" class="help-block">
+    <div ng-if="newPersonForm.firstName.$touched" ng-messages="newPersonForm.firstName.$error" class="help-block">
       <div ng-messages-include="/views/messages.html"></div>
     </div>
 
@@ -14,14 +14,14 @@
     <label>Last Name</label>
     <input required ng-minlength="1" ng-maxlength="20" name="lastName" ng-model="newPerson.lastName" type="text" class="form-control">
 
-    <div ng-if="newPersonForm.lastName.$touched" ng-messages="newPersonsForm.lastName.$error" class="help-block">
+    <div ng-if="newPersonForm.lastName.$touched" ng-messages="newPersonForm.lastName.$error" class="help-block">
       <div ng-messages-include="/views/messages.html"></div>
     </div>
 
   </div>
 
 
-  <div class="form-group" ng-class="{ 'has-error': newPostForm.body.$touched && newPostForm.body.$invalid }">
+  <div class="form-group" ng-class="{ 'has-error': newPersonForm.body.$touched && newPersonForm.body.$invalid }">
     <label>Notes</label>
     <textarea ng-minlength="1" required name="notes" ng-model="newPerson.notes" class="form-control"></textarea>
     <div ng-if="newPersonForm.notes.$touched" ng-messages="newPersonForm.notes.$error" class="help-block">
