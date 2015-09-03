@@ -1,6 +1,6 @@
 AddressBookApp.controller('HomeCtrl', ['$scope', 'Person', '$modal',function($scope, Person, $modal){
 
-  //   $scope.posts = [];
+    $scope.people = [];
   //   $scope.orderField='title';
 
 
@@ -11,22 +11,22 @@ AddressBookApp.controller('HomeCtrl', ['$scope', 'Person', '$modal',function($sc
     $scope.people = people;
   });
 
-  // $scope.deletePost = function(post) {
-  //   post.$delete();
-  // }
+  $scope.deletePerson = function(person) {
+    person.$delete();
+  }
 
-  // $scope.editPost = function(post) {
-  //   console.log('EDIT', post);
-  //   $modal.open({
-  //     templateUrl:'/views/post/editModal.html',
-  //     controller: 'PostEditModalCtrl',
-  //     resolve: {
-  //       editPost: function() {
-  //           return post;
-  //       }
-  //     }
-  //   });
-  // }
+  $scope.editPerson = function(person) {
+    console.log('EDIT', person);
+    $modal.open({
+      templateUrl:'/views/person/editModal.html',
+      controller: 'PersonEditModalCtrl',
+      resolve: {
+        editPerson: function() {
+            return person;
+        }
+      }
+    });
+  }
 
 
 }]);

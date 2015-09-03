@@ -1,0 +1,37 @@
+<form ng-submit="updatePerson()" name="newPersonForm" novalidate>
+  <div class="modal-header">
+      <h3 class="modal-title">Edit Person</h3>
+  </div>
+  <div class="modal-body">
+      <div class="form-group" ng-class="{ 'has-error': newPersonForm.firstName.$touched && newPersonForm.firstName.$invalid }">
+        <label>First Name</label>
+        <input required ng-minlength="5" ng-maxlength="10" name="firstName" ng-model="newPerson.firstName" type="text" class="form-control">
+        <div ng-if="newPersonForm.firstName.$touched" ng-messages="newPersonForm.firstName.$error" class="help-block">
+          <div ng-messages-include="/views/messages.html"></div>
+        </div>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-error': newPersonForm.lastName.$touched && newPersonForm.lastName.$invalid }">
+        <label>Last Name</label>
+        <input required ng-minlength="5" ng-maxlength="10" name="lastName" ng-model="newPerson.lastName" type="text" class="form-control">
+        <div ng-if="newPersonForm.lastName.$touched" ng-messages="newPersonForm.lastName.$error" class="help-block">
+          <div ng-messages-include="/views/messages.html"></div>
+        </div>
+      </div>
+
+
+      <div class="form-group" ng-class="{ 'has-error': newPersonForm.notes.$touched && newPersonForm.notes.$invalid }">
+        <label>Body</label>
+        <textarea ng-minlength="3" required name="body" ng-model="newPerson.notes" class="form-control"></textarea>
+        <div ng-if="newPersonorm.notes.$touched" ng-messages="newPersonForm.notes.$error" class="help-block">
+          <div ng-messages-include="/views/messages.html"></div>
+        </div>
+      </div>
+
+  </div>
+  <div class="modal-footer">
+      <button  class="btn btn-primary" type="submit">Save</button>
+      <!-- ng-disabled="newPersonForm.$invalid" -->
+      <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</form>

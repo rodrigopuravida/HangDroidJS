@@ -1,6 +1,6 @@
 <h1>My Home page
 
-<a href="/Person/new" class="pull-right btn btn-success glyphicon glyphicon-plus"></a>
+<a href="/person/new" class="pull-right btn btn-success glyphicon glyphicon-plus"></a>
 
 </h1>
 
@@ -18,8 +18,8 @@
       <td>{{person.lastName}}</a></td>
       <td>{{person.notes }}</td>
       <td>
-        <a ng-click="deletePost(person)" class="glyphicon glyphicon-trash"></a>
-        <a ng-click="editPost(person)" class="glyphicon glyphicon-edit"></a>
+        <a ng-click="deletePerson(person)" class="glyphicon glyphicon-trash"></a>
+        <a ng-click="editPerson(person)" class="glyphicon glyphicon-edit"></a>
       </td>
     </tr>
   </tbody>

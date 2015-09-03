@@ -22,18 +22,18 @@ AddressBookApp.config(['$routeProvider','$locationProvider','sailsResourceProvid
     templateUrl:'/views/about.html',
     controller:'AboutCtrl'
   })
-  // .when('/post/new', {
-  //   templateUrl:'/views/post/new.html',
-  //   controller:'PostNewCtrl'
-  // })
-  // .when('/post/:id',{
-  //   templateUrl:'/views/post/show.html',
-  //   controller:'PostShowCtrl'
-  // })
+  .when('/person/new', {
+    templateUrl:'/views/person/new.html',
+    controller:'PersonNewCtrl'
+  })
+  .when('/person/:id',{
+    templateUrl:'/views/person/show.html',
+    controller:'PersonShowCtrl'
+  })
 
-  // .otherwise({
-  //   templateUrl:'/views/404.html'
-  // });
+  .otherwise({
+    templateUrl:'/views/404.html'
+  });
 
 
 }]);
