@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ #hangManBody {
+ background-image: url(wildwest.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ font-family: 'Rock Salt', cursive;
+}
+
+#levels {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+
+}
+
+#generateWord-form{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#guessWord-form {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#getTip-form{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#playAgain-form{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+
+
+
+#droid_image {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-right: 0px;
+    margin-left: 0px;
+    opacity: .8
+}
+
+
+
+*[id^='letter']{
+    width: 70px;
+    height: 70px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-right:2px;
+    margin-left: 2px;
+}
+
+#guessing_area {
+    opacity: .8;
+}
+
+
+
+#generateWord-form {
+    display:inline;
+    float:left;
+
+}
+
+h3.hidden {
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+

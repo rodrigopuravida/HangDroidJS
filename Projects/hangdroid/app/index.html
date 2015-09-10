@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <title>HangDroidOnrails</title>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css">
+  <script src="assets/javascripts/script.js"></script>
+
+</head>
+<body id="hangManBody">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">HangDroid</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">How to Play</button>
+
+        <!-- Modal -->
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Playing Instructions</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Select a HangDroid Level</p>
+                  <p>Click on 'Get Word' button and a message will appear with length of word to guess</p>
+                  <p>Enter a letter under 'Check Letter' and click on button to see results</p>
+                  <p>If the letter guessed is correct it will appear in the bottom letter display</p>
+                  <p>IF the letter guessed is wrong, the hanging will start</p>
+                  <p>Click on 'Get Tip' button to get a tip on word to be guessed BUT NOTE a piece of the droid hanging will be added</p>
+                  <p>At the end of game you will either see a 'WIN' message or a 'LOST' message with the missed word displayed</p>
+                  <p>Refresh Page to play again</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container" id="HangDroidTitle">
+<h1 id="winOrLose">PLAY HANGDROID</h1>
+
+  <div class="container">
+    <div class="row" id="main">
+      <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" id="droid_image">
+
+        <img src="assets/images/droidL8.jpg" id = "droid_image_index">
+
+      </div>
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-left">
+        <div class="row" id="main">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <div class="dropdown" id="levels">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">HangDroid Level
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu dropdown-menu-left">
+                    <li><a href="#">Easy</a></li>
+                    <li><a href="#">Medium</a></li>
+                    <li><a href="#">Hard</a></li>
+                    <li><a href="#">There is just no way</a></li>
+                  </ul>
+                  <input type="text" id="level-text" id="level-selected" size="24" readonly>
+            </div>
+          </div>
+
+        </div>
+        <div class="row" id="main">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <form id="generateWord-form" class="form" id="generateWord-form">
+              <input type="submit" id="word-length-button" class="btn btn-info" value="Get Word">
+                  <input type="text" id="word-length-text" class="form-word" size="24" float-right>
+              </form>
+          </div>
+
+        </div>
+
+        <div class="row" id="main">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <form id="guessWord-form" class="form">
+                <input type="submit" class="btn btn-danger" id="checkLetter" value="Check Letter">
+                  <input type="text" id="guess-letter-text" class="form-guessLetter" size="4" maxlength="1">
+              </form>
+          </div>
+        </div>
+
+        <div class="row" id="main">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <form id="getTip-form" class="formTip">
+              <input type="submit" class="btn btn-warning" id="getTip" value="Get Tip">
+                  <input type="text" id="get-tip-text" class="form-getTip" size="24">
+              </form>
+          </div>
+        </div>
+
+        <div class="row" id="main">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <form id="playAgain-form" class="formPlayAgain">
+              <input type="submit" class="btn btn-danger" id="playAgain" value="Play Again">
+              </form>
+          </div>
+        </div>
+
+      </div>
+
+
+        </div id = "guessing_area">
+
+          <!--<img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">
+          <img src="/assets/alphabet/blank.png" id = "letter">-->
+
+      </div>
+
+      </div>
+
+
+  </div>
+  <div class="container">
+    <div class="row" id="guessing_area">
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="droid_image">
+
+
+                    <script>
+                            for (var i = 0; i < 15; i++) {
+                            var img = new Image();
+                            img.src = "assets/images/Alphabet/blank.png";
+                            img.id = "letter" + i + '-text';
+
+                            var toAppendToNode = document.getElementById("guessing_area");
+                            toAppendToNode.appendChild(img);
+                            }
+                    </script>
+
+          </div>
+    </div>
+   </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
